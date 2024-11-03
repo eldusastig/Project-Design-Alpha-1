@@ -1,0 +1,19 @@
+names:
+- bad_welding
+- crack
+- defect
+- excess_reinforcement
+- good_welding
+- porosity
+- spatter
+- welding_line
+nc: 8
+roboflow:
+  license: CC BY 4.0
+  project: combined_dataset-yttvz
+  url: https://universe.roboflow.com/samvel-zhamharyan/combined_dataset-yttvz/dataset/1
+  version: 1
+  workspace: samvel-zhamharyan
+test: /content/Combined_Dataset-1/test
+train: /content/Combined_Dataset-1/train
+val: /content/Combined_Dataset-1/valid
