@@ -9,8 +9,8 @@ def load_class_labels(yaml_file):
         data = yaml.safe_load(file)
     return data['names']
 
-model_path = 'C:/Users/Jethro Pogi/Downloads/best.pt'  
-data_yaml_path = 'C:/Users/Jethro Pogi/Desktop/PD/data.yaml'  
+model_path = 'best.pt'  
+data_yaml_path = 'data.yaml'  
 
 st.title("Welding Image Detection")
 st.write("Using your camera to detect welding-related objects")
