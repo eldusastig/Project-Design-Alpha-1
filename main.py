@@ -43,5 +43,14 @@ def run_camera(model):
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         camera_placeholder.image(frame_rgb, channels="RGB", use_column_width=True)
     cap.release()
-if st.button("Start Camera"):
-    run_camera(model)
+run_camera(model)
+st.markdown(
+    """
+    <a href="/logs" target="_blank">
+        <button style="display: block; width: 100%; padding: 1em; margin-top: 1em; color: white; background-color: #007ACC; border: none; border-radius: 5px;">
+            Logs
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
