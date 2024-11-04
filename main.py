@@ -44,7 +44,7 @@ if st.session_state.page == 'Main':
 
     def run_camera():
         """Capture frames from the camera and run object detection."""
-        cap = cv2.VideoCapture(0)
+        cap = cv2.VideoCapture(1)
         if not cap.isOpened():
             st.error("Unable to open the camera")
             return
