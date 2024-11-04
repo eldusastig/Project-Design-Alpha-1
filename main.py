@@ -5,8 +5,8 @@ from ultralytics import YOLO
 import calendar
 
 
-def load_class_labels(yaml_file):
-    """Load class labels from the YAML file."""
+def load_class_labels(yaml_file)
+
     with open(yaml_file, 'r') as file:
         data = yaml.safe_load(file)
     return data['names']
@@ -34,7 +34,6 @@ st.sidebar.header('Check Logs')
 for month in calendar.month_name[1:]:  
     st.sidebar.button(month, on_click=change_page, args=(month,))
 
-
 if st.session_state.page == 'Main':
     st.subheader("Main Page")
     st.write("Welcome to the main page for Welding Image Detection.")
@@ -43,8 +42,7 @@ if st.session_state.page == 'Main':
     class_labels = load_class_labels(DATA_YAML_PATH)
 
     def run_camera():
-        """Capture frames from the camera and run object detection."""
-        cap = cv2.VideoCapture(1)
+        cap = cv2.VideoCapture(0)
         if not cap.isOpened():
             st.error("Unable to open the camera")
             return
