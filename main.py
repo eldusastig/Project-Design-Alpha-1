@@ -5,8 +5,7 @@ from ultralytics import YOLO
 import calendar
 
 
-def load_class_labels(yaml_file)
-
+def load_class_labels(yaml_file):
     with open(yaml_file, 'r') as file:
         data = yaml.safe_load(file)
     return data['names']
