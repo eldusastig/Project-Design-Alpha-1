@@ -10,29 +10,18 @@ def load_class_labels(yaml_file):
     with open(yaml_file, 'r') as file:
         data = yaml.safe_load(file)
     return data['names']
-
-
-# Initialize session state variables
+    
 if 'page' not in st.session_state:
     st.session_state.page = 'Main'
 if 'camera_active' not in st.session_state:
     st.session_state.camera_active = True
-
-
 def change_page(page_name):
     st.session_state.page = page_name
     st.session_state.camera_active = False
-
-
-
+    
 MODEL_PATH = 'model.pt'
-
 DATA_YAML_PATH = 'data.yaml'
-
-
 st.title("Welding Image Detection")
-
-
 st.sidebar.header('Check Logs')
 for month in calendar.month_name[1:]:  #
     st.sidebar.button(month, on_click=change_page, args=(month,))
@@ -85,18 +74,13 @@ if st.session_state.page == 'Main':
             camera_placeholder.image(frame_rgb, channels="RGB", use_column_width=True)
 
         cap.release()
-
     if st.session_state.camera_active:
         run_camera()
-
     if st.button("Stop Camera"):
         st.session_state.camera_active = False
-
 elif st.session_state.page in calendar.month_name[1:]:
     st.subheader(f"{st.session_state.page} Logs")
     st.write(f"You are viewing logs for {st.session_state.page}.")
-
-    # Back button to return to the main page
     if st.button("Back to Main Page"):
         st.session_state.page = 'Main'
-        st.session_state.camera_active = True  # Restart camera on main page
+        st.session_state.camera_active = True  
