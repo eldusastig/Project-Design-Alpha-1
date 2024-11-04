@@ -86,9 +86,6 @@ if st.session_state.page == 'Main':
     if st.session_state.camera_active:
         run_camera()
 
-    if st.button("Stop Camera"):
-        st.session_state.camera_active = False
-
 elif st.session_state.page in calendar.month_name[1:]:
     st.subheader(f"{st.session_state.page} Logs")
     st.write(f"You are viewing logs for {st.session_state.page}.")
